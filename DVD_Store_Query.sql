@@ -28,7 +28,7 @@ ORDER BY amount DESC
 limit 3;
 
 
-/* Q4: 4)	Which store has better customers? We’d like to know which store has more customers so we can run some promotions for that particular store. 
+/* Q4: Which store has better customers? We’d like to know which store has more customers so we can run some promotions for that particular store. 
 Write a query that returns the store with the higher sales. Return both the store information and sum of all invoice totals. */
 
 
@@ -56,7 +56,7 @@ ORDER BY
     "Total Invoices" DESC;
 
 
-/* Q5: 5)	Who’s the best customer? The customer that has spent the most money will be declared as the best customer. 
+/* Q5: Who’s the best customer? The customer that has spent the most money will be declared as the best customer. 
 Write a query that returns the person who has spent the most money including first name, last name, address info, contact info, and total number of rentals.*/
 
 SELECT 
@@ -75,7 +75,7 @@ FROM
 JOIN 
     customer c ON r.customer_id = c.customer_id
 JOIN
-	address a ON c.address_id = a.address_id
+    address a ON c.address_id = a.address_id
 GROUP BY 
     c.customer_id, 
 	c.first_name,
@@ -86,6 +86,5 @@ GROUP BY
 	a.district,
 	a.postal_code,
 	a.phone
-ORDER BY 
-    "Rental Count" DESC
-	limit 1;
+ORDER BY "Rental Count" DESC
+limit 1;
